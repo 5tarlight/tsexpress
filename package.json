@@ -1,0 +1,8 @@
+{
+  "name": "tsexpress",
+  "version": "1.0.0",
+  "main": "main.js",
+  "repository": "git@github.com:5tarlight/tsexpress.git",
+  "author": "5tarlight <developerstarlight@gmail.com>",
+  "license": "LGPL-3.0"
+}
