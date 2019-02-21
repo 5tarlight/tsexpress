@@ -6,7 +6,8 @@
   "author": "5tarlight <developerstarlight@gmail.com>",
   "license": "LGPL-3.0",
   "scripts": {
-    "start": "node ./bin/main"
+    "start": "node ./bin/main",
+    "grunt": "grunt"
   },
   "dependencies": {
     "express": "^4.16.4",
