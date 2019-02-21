@@ -4,5 +4,11 @@
   "main": "main.js",
   "repository": "git@github.com:5tarlight/tsexpress.git",
   "author": "5tarlight <developerstarlight@gmail.com>",
-  "license": "LGPL-3.0"
+  "license": "LGPL-3.0",
+  "scripts": {
+    "start": "node ./bin/main"
+  },
+  "dependencies": {
+    "express": "^4.16.4"
+  }
 }
