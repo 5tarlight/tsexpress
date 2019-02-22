@@ -13,6 +13,9 @@ class Server {
   }
 
   public config(): void {
+    this.app.set('views', path.join(__dirname, '/../src/lib/public/routes/views'))
+    this.app.set('view engine', 'pug')
+
     this.app.use(parser.urlencoded({ extended: false }))
     this.app.use(parser.json())
     this.app.use(cors())
@@ -21,7 +24,12 @@ class Server {
 
   public route(): void {
     this.app.get('/', (req: express.Request, res: express.Response): void => {
-      res.send('Hello World!');
+      res.app.render('portal', {}, (err: Error, html: string): void => {
+        if(err) {
+          console.dir(err.stack)
+        }
+        res.end(html)
+      })
     });
   }
 }
