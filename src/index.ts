@@ -1,11 +1,10 @@
 import * as express from 'express'
+const app = express();
 
-const app = express()
-
-app.get('/', (req, res): void => {
-  res.send("Hello World!")
-})
+app.get('/', (req: express.Request, res: express.Response): void => {
+  res.send('Hello World!');
+});
 
 app.listen(80, (): void => {
-  console.log('server on!')
-})
+  console.log('Server On!');
+});
