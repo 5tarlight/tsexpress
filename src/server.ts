@@ -2,6 +2,7 @@ import * as express from 'express'
 import * as parser from 'body-parser'
 import * as cors from 'cors'
 import * as path from 'path'
+import Loader from './lib/public/routes/loader'
 
 class Server {
   public app: express.Application
@@ -23,14 +24,7 @@ class Server {
   }
 
   public route(): void {
-    this.app.get('/', (req: express.Request, res: express.Response): void => {
-      res.app.render('portal', {}, (err: Error, html: string): void => {
-        if(err) {
-          console.dir(err.stack)
-        }
-        res.end(html)
-      })
-    });
+    Loader.init(this.app, express.Router())
   }
 }
 
