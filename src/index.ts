@@ -1,10 +1,7 @@
-import * as express from 'express'
-const app = express();
+import Server from './server'
 
-app.get('/', (req: express.Request, res: express.Response): void => {
-  res.send('Hello World!');
-});
+const app = new Server().app
 
 app.listen(80, (): void => {
-  console.log('Server On!');
-});
+  console.log('Server On')
+})
