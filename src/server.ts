@@ -1,4 +1,6 @@
 import * as express from 'express'
+import * as parser from 'body-parser'
+import bodyParser = require('body-parser');
 
 class Server {
   public app: express.Application
@@ -10,7 +12,8 @@ class Server {
   }
 
   public config(): void {
-
+    this.app.use(parser.urlencoded({ extended: false }))
+    this.app.use(parser.json())
   }
 
   public route(): void {
