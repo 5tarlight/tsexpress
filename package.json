@@ -6,7 +6,7 @@
   "author": "5tarlight <developerstarlight@gmail.com>",
   "license": "LGPL-3.0",
   "scripts": {
-    "start": "node ./bin/main",
+    "start": "tsc && node dist",
     "grunt": "grunt"
   },
   "dependencies": {
