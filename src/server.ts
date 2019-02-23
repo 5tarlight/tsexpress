@@ -3,6 +3,7 @@ import * as parser from 'body-parser'
 import * as cors from 'cors'
 import * as path from 'path'
 import Loader from './lib/public/routes/loader'
+import SLog from './lib/slog'
 
 class Server {
   public app: express.Application

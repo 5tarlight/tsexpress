@@ -5,7 +5,7 @@ class SLog {
   public static write(message: string): void {
     let date = new Date()
 
-    fs.writeFileSync(__dirname + '/log/' + date.getFullYear() + '_' + (date.getMonth() + 1) + '_' + date.getDate() + '.log', message, { flag: 'a', encoding: 'utf-8' })
+    fs.writeFileSync(__dirname + '/../../src/lib/log/' + date.getFullYear() + '_' + (date.getMonth() + 1) + '_' + date.getDate() + '.log', message, { flag: 'a', encoding: 'utf-8' })
   }
 
   public static timestamp(): string {
@@ -15,22 +15,24 @@ class SLog {
   }
 
   public static info(message: string): void {
-    console.log(SLog.timestamp() + 'info'.bgWhite.black + message)
+    console.log(SLog.timestamp() + 'info'.bgWhite + message)
     SLog.write(SLog.timestamp() + message + '\n')
   }
 
   public static warn(message: string): void {
-    console.log(SLog.timestamp() + 'warn'.bgYellow.white + message)
+    console.log(SLog.timestamp() + 'warn'.bgYellow + message)
     SLog.write(SLog.timestamp() + message + '\n')
   }
 
   public static err(message: string): void {
-    console.log(SLog.timestamp() + 'err'.bgRed.white + message)
+    console.log(SLog.timestamp() + 'err'.bgRed + message)
     SLog.write(SLog.timestamp() + message + '\n')
   }
 
   public static success(message: string): void {
-    console.log(SLog.timestamp() + 'success'.bgGreen.white + message)
+    console.log(SLog.timestamp() + 'success'.bgGreen + message)
     SLog.write(SLog.timestamp() + message + '\n')
   }
 }
+
+export default SLog
